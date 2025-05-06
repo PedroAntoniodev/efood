@@ -1,7 +1,11 @@
+import Header from "./components/Header";
+import { GlobalCss } from "./styles";
+
 function App() {
   return (
     <>
-      <div>App</div>
+      <GlobalCss />
+      <Header />
     </>
   );
 }
