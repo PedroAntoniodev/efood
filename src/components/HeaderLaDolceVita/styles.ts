@@ -9,8 +9,15 @@ export const Styles = styled.div`
     align-items: center;
     padding: 32px 0;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 900;
+    line-height: 100%;
     color: ${cores.vermelho};
+
+    h2 {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 100%;
+    }
   }
 
   ${LogoEfood} {
