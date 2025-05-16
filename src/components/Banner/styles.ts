@@ -6,10 +6,28 @@ export const Imagem = styled.div`
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 
   padding-top: 24px;
   padding-bottom: 32px;
   margin-bottom: 56px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
 `;
 
 export const Titulos = styled.div`

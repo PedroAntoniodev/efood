@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.png";
 import { Imagem, LogoEfood } from "../Header/styles";
 import { LinkCart, Styles } from "./styles";
 
-const HeaderLaDolceVita = () => (
+const HeaderPerfil = () => (
   <Imagem style={{ backgroundImage: `url(${ImagemFundo})` }}>
     <Styles>
       <div className="container">
@@ -18,4 +18,4 @@ const HeaderLaDolceVita = () => (
   </Imagem>
 );
 
-export default HeaderLaDolceVita;
+export default HeaderPerfil;

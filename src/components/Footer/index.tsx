@@ -5,10 +5,13 @@ import Logo from "../../assets/images/logo.png";
 
 import { Container, SocialLinks } from "./styles";
 import { LogoEfood } from "../Header/styles";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <Container>
-    <LogoEfood src={Logo} alt="logo" />
+    <Link to="/">
+      <LogoEfood src={Logo} alt="logo" />
+    </Link>
     <SocialLinks>
       <a href="#"></a>
       <a href="#">

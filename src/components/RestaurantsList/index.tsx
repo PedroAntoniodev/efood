@@ -1,4 +1,4 @@
-import type Restaurant from "../../models/Restaurant";
+import type { Restaurant } from "../../pages/Home";
 import Restaurants from "../Restaurants";
 import { Container, List } from "./styles";
 
@@ -7,17 +7,28 @@ export type Props = {
 };
 
 const RestaurantList = ({ restaurants }: Props) => {
+  const getRestaurantTags = (restaurants: Restaurant) => {
+    const tags = [];
+
+    if (restaurants.destacado === true) {
+      tags.push("Destaque da semana");
+    }
+
+    return tags;
+  };
+
   return (
     <Container>
       <List>
         {restaurants.map((restaurant) => (
           <Restaurants
+            id={restaurant.id}
             key={restaurant.id}
-            title={restaurant.title}
-            description={restaurant.description}
-            infos={restaurant.infos}
-            image={restaurant.image}
-            overallRating={restaurant.overallRating}
+            title={restaurant.titulo}
+            description={restaurant.descricao}
+            infos={[...getRestaurantTags(restaurant), restaurant.tipo]}
+            image={restaurant.capa}
+            overallRating={restaurant.avaliacao}
           />
         ))}
       </List>
