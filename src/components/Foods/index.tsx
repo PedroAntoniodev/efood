@@ -1,4 +1,10 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import type { Food } from "../../pages/Home";
+
+import { add, open } from "../../store/reducers/cart";
+import { formataPreco, getDescricaoCurta } from "../../utils";
+
 import {
   Botao,
   Card,
@@ -10,7 +16,6 @@ import {
   Titulo,
 } from "./styles";
 import fechar from "../../assets/images/close.png";
-import { formataPreco, getDescricaoCurta } from "../../utils";
 
 type Props = {
   title: string;
@@ -18,13 +23,21 @@ type Props = {
   serving: string;
   image: string;
   price: number;
+  food: Food;
 };
 
 export interface ModalState {
   isVisible: boolean;
 }
 
-const Foods = ({ title, description, image, serving, price }: Props) => {
+const Foods = ({ title, description, image, serving, price, food }: Props) => {
+  const dispatch = useDispatch();
+
+  const adicionarAoCarrinho = () => {
+    dispatch(add(food));
+    dispatch(open());
+  };
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
   });
@@ -64,7 +77,9 @@ const Foods = ({ title, description, image, serving, price }: Props) => {
               <Descricao>{description}</Descricao>
               <br />
               <p>Serve: {serving}</p>
-              <Botao>Adicionar ao carrinho - {formataPreco(price)}</Botao>
+              <Botao onClick={adicionarAoCarrinho}>
+                Adicionar ao carrinho - {formataPreco(price)}
+              </Botao>
             </ConteudoCard>
           </ModalCard>
         </ModalContent>

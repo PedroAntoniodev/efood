@@ -16,7 +16,6 @@ export type Props = {
 };
 
 const FoodList = ({ comidas }: Props) => {
-  console.log(comidas);
   return (
     <Container>
       <List>
@@ -28,6 +27,7 @@ const FoodList = ({ comidas }: Props) => {
             image={comida.foto}
             serving={comida.porcao}
             price={comida.preco}
+            food={comida}
           />
         ))}
       </List>

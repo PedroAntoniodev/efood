@@ -28,4 +28,5 @@ export const Styles = styled.div`
 
 export const LinkCart = styled.a`
   color: ${cores.vermelho};
+  cursor: pointer;
 `;

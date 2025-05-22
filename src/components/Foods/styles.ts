@@ -78,6 +78,7 @@ export const ModalContent = styled.div`
 
     > img {
       height: 16px;
+      cursor: pointer;
     }
   }
 `;
@@ -116,5 +117,6 @@ export const ModalCard = styled.div`
     margin-top: 16px;
     font-size: 14px;
     font-weight: 700;
+    cursor: pointer;
   }
 `;
