@@ -45,19 +45,19 @@ const Cart = () => {
       cep: Yup.string().required("Campo obrigatório"),
       houseNumber: Yup.string().required("Campo obrigatório"),
 
-      cardName: Yup.string().when((values, schema) =>
+      cardName: Yup.string().when((_values, schema) =>
         step === "payment" ? schema.required("Campo obrigatório") : schema
       ),
-      cardNumber: Yup.string().when((values, schema) =>
+      cardNumber: Yup.string().when((_values, schema) =>
         step === "payment" ? schema.required("Campo obrigatório") : schema
       ),
-      cardCode: Yup.string().when((values, schema) =>
+      cardCode: Yup.string().when((_values, schema) =>
         step === "payment" ? schema.required("Campo obrigatório") : schema
       ),
-      expiresMonth: Yup.string().when((values, schema) =>
+      expiresMonth: Yup.string().when((_values, schema) =>
         step === "payment" ? schema.required("Campo obrigatório") : schema
       ),
-      expiresYear: Yup.string().when((values, schema) =>
+      expiresYear: Yup.string().when((_values, schema) =>
         step === "payment" ? schema.required("Campo obrigatório") : schema
       ),
     }),
