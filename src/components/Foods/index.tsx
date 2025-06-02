@@ -1,21 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import type { Food } from "../../pages/Home";
 
 import { add, open } from "../../store/reducers/cart";
-import { formataPreco, getDescricaoCurta } from "../../utils";
+import { formatPrice, getDescriptionSmall } from "../../utils";
 
-import {
-  Botao,
-  Card,
-  ConteudoCard,
-  Descricao,
-  Modal,
-  ModalCard,
-  ModalContent,
-  Titulo,
-} from "./styles";
-import fechar from "../../assets/images/close.png";
+import close from "../../assets/images/close.png";
+
+import * as S from "./styles";
 
 type Props = {
   title: string;
@@ -49,47 +42,47 @@ const Foods = ({ title, description, image, serving, price, food }: Props) => {
   };
   return (
     <>
-      <Card>
+      <S.Card>
         <img src={image} alt={title} />
-        <ConteudoCard>
-          <Titulo>{title}</Titulo>
-          <Descricao>{getDescricaoCurta(description)}</Descricao>
-          <Botao onClick={() => setModal({ isVisible: true })}>
+        <S.CardContent>
+          <S.Title>{title}</S.Title>
+          <S.Description>{getDescriptionSmall(description)}</S.Description>
+          <S.Button onClick={() => setModal({ isVisible: true })}>
             Mais detalhes
-          </Botao>
-        </ConteudoCard>
-      </Card>
-      <Modal className={modal.isVisible ? "visivel" : ""}>
-        <ModalContent className="container">
+          </S.Button>
+        </S.CardContent>
+      </S.Card>
+      <S.Modal className={modal.isVisible ? "visivel" : ""}>
+        <S.ModalContent className="container">
           <header>
             <img
-              src={fechar}
+              src={close}
               alt="Botão fechar"
               onClick={() => {
                 closeModal();
               }}
             />
           </header>
-          <ModalCard>
+          <S.ModalCard>
             <img src={image} alt={title} />
-            <ConteudoCard>
-              <Titulo>{title}</Titulo>
-              <Descricao>{description}</Descricao>
+            <S.CardContent>
+              <S.Title>{title}</S.Title>
+              <S.Description>{description}</S.Description>
               <br />
               <p>Serve: {serving}</p>
-              <Botao onClick={adicionarAoCarrinho}>
-                Adicionar ao carrinho - {formataPreco(price)}
-              </Botao>
-            </ConteudoCard>
-          </ModalCard>
-        </ModalContent>
+              <S.Button onClick={adicionarAoCarrinho}>
+                Adicionar ao carrinho - {formatPrice(price)}
+              </S.Button>
+            </S.CardContent>
+          </S.ModalCard>
+        </S.ModalContent>
         <div
           className="overlay"
           onClick={() => {
             closeModal();
           }}
         ></div>
-      </Modal>
+      </S.Modal>
     </>
   );
 };

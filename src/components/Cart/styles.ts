@@ -1,7 +1,13 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
 
-import lixeira from "../../assets/images/lixeira.png";
+import { colors } from "../../styles";
+import { Button } from "../Foods/styles";
+
+import binIcon from "../../assets/images/lixeira.png";
+
+type InputGroupProps = {
+  maxWidth?: string;
+};
 
 export const Overlay = styled.div`
   position: absolute;
@@ -27,7 +33,7 @@ export const CardContainer = styled.div`
   }
 `;
 export const SideBar = styled.aside`
-  background-color: ${cores.vermelho};
+  background-color: ${colors.red};
   z-index: 1;
   padding: 32px 8px 0 8px;
   max-width: 360px;
@@ -36,7 +42,7 @@ export const SideBar = styled.aside`
 export const Preco = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${cores.branca};
+  color: ${colors.white};
   margin-top: 40px;
   margin-bottom: 16px;
 
@@ -47,7 +53,7 @@ export const Preco = styled.div`
 `;
 export const CartItem = styled.li`
   display: flex;
-  background-color: ${cores.branca2};
+  background-color: ${colors.white2};
   width: 344px;
   height: 100px;
   margin-bottom: 16px;
@@ -63,7 +69,7 @@ export const CartItem = styled.li`
   h3 {
     font-weight: 900;
     font-size: 18px;
-    color: ${cores.vermelho};
+    color: ${colors.red};
     margin-top: 8px;
     margin-bottom: 16px;
   }
@@ -72,11 +78,11 @@ export const CartItem = styled.li`
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: ${cores.vermelho};
+    color: ${colors.red};
   }
 
   button {
-    background-image: url(${lixeira});
+    background-image: url(${binIcon});
     width: 16px;
     height: 16px;
     border: none;
@@ -85,4 +91,55 @@ export const CartItem = styled.li`
     bottom: 8px;
     right: 8px;
   }
+`;
+
+export const ContainerInput = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Title = styled.h2`
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 16px;
+  color: ${colors.white};
+`;
+
+export const InputGroup = styled.div<InputGroupProps>`
+  display: auto;
+  max-width: ${(props) => props.maxWidth};
+`;
+
+export const Label = styled.label`
+  color: ${colors.white};
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+export const ButtonContainer = styled.div`
+  margin-top: 24px;
+
+  ${Button} {
+    margin-bottom: 8px;
+  }
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 32px;
+  background-color: ${colors.white2};
+  border: 1px solid ${colors.white2};
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+  &.error {
+    border: 2px solid red;
+  }
+`;
+
+export const Text = styled.p`
+  color: ${colors.white};
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 24px;
 `;

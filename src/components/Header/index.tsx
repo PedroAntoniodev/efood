@@ -1,15 +1,15 @@
-import logo from "../../assets/images/logo.png";
-import { Imagem, LogoEfood, Titulo } from "./styles";
-import ImagemFundo from "../../assets/images/fundo.png";
+import * as S from "./styles";
 
+import backgroundImage from "../../assets/images/fundo.png";
+import logo from "../../assets/images/logo.png";
 const Header = () => (
-  <Imagem style={{ backgroundImage: `url(${ImagemFundo})` }}>
-    <LogoEfood src={logo} alt="logo" />
-    <Titulo>
+  <S.Image style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <S.LogoEfood src={logo} alt="logo" />
+    <S.Title>
       Viva experiências gastronômicas <br />
       no conforto da sua casa
-    </Titulo>
-  </Imagem>
+    </S.Title>
+  </S.Image>
 );
 
 export default Header;

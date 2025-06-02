@@ -1,20 +1,20 @@
-import { Imagem, Titulos } from "./styles";
+import * as S from "./styles";
 
 type BannerProps = {
   backgroundImage: string;
-  tipo: string;
-  titulo: string;
+  type: string;
+  title: string;
 };
 
-const Banner = ({ backgroundImage, tipo, titulo }: BannerProps) => (
-  <Imagem style={{ backgroundImage: `url(${backgroundImage})` }}>
+const Banner = ({ backgroundImage, type, title }: BannerProps) => (
+  <S.Image style={{ backgroundImage: `url(${backgroundImage})` }}>
     <div className="container">
-      <Titulos>
-        <h2>{tipo}</h2>
-        <h1>{titulo}</h1>
-      </Titulos>
+      <S.Title>
+        <h2>{type}</h2>
+        <h1>{title}</h1>
+      </S.Title>
     </div>
-  </Imagem>
+  </S.Image>
 );
 
 export default Banner;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   width: 100%;
   height: 280px;
   display: flex;
@@ -30,7 +30,7 @@ export const Imagem = styled.div`
   }
 `;
 
-export const Titulos = styled.div`
+export const Title = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;

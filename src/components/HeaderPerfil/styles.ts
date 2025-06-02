@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { colors } from "../../styles";
 import { LogoEfood } from "../Header/styles";
 
 export const Styles = styled.div`
@@ -11,7 +11,7 @@ export const Styles = styled.div`
     font-size: 18px;
     font-weight: 900;
     line-height: 100%;
-    color: ${cores.vermelho};
+    color: ${colors.red};
 
     h2 {
       font-size: 18px;
@@ -27,6 +27,6 @@ export const Styles = styled.div`
 `;
 
 export const LinkCart = styled.a`
-  color: ${cores.vermelho};
+  color: ${colors.red};
   cursor: pointer;
 `;

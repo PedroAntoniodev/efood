@@ -5,11 +5,13 @@ import type { Food } from "../../pages/Home";
 type CartState = {
   items: Food[];
   isOpen: boolean;
+  step: "cart" | "delivery" | "payment";
 };
 
 const initialState: CartState = {
   items: [],
   isOpen: false,
+  step: "cart",
 };
 
 const cartSlice = createSlice({
@@ -33,8 +35,17 @@ const cartSlice = createSlice({
     close: (state) => {
       state.isOpen = false;
     },
+    setStep: (
+      state,
+      action: PayloadAction<"cart" | "delivery" | "payment">
+    ) => {
+      state.step = action.payload;
+    },
+    clear: (state) => {
+      state.items = [];
+    },
   },
 });
 
-export const { add, remove, open, close } = cartSlice.actions;
+export const { add, remove, open, close, setStep, clear } = cartSlice.actions;
 export default cartSlice.reducer;

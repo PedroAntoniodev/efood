@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { colors } from "../../styles";
 
 export const Card = styled.div`
-  background-color: ${cores.vermelho};
+  background-color: ${colors.red};
   padding: 8px;
 
   img {
@@ -13,27 +13,27 @@ export const Card = styled.div`
   }
 `;
 
-export const ConteudoCard = styled.div`
-  color: ${cores.branca};
+export const CardContent = styled.div`
+  color: ${colors.white};
   font-size: 14px;
 `;
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 8px;
   padding-top: 8px;
 `;
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   padding-bottom: 8px;
-  color: ${cores.branca2};
+  color: ${colors.white2};
 `;
 
-export const Botao = styled.button`
+export const Button = styled.button`
   width: 100%;
-  color: ${cores.vermelho};
-  background-color: ${cores.branca2};
+  color: ${colors.red};
+  background-color: ${colors.white2};
   border: none;
   font-weight: bold;
   padding: 4px;
@@ -66,7 +66,7 @@ export const Modal = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  background-color: ${cores.vermelho};
+  background-color: ${colors.red};
   width: 1024px;
   height: 344px;
   z-index: 1;
@@ -99,19 +99,19 @@ export const ModalCard = styled.div`
     object-fit: cover;
   }
 
-  ${Titulo} {
+  ${Title} {
     font-size: 18px;
     font-weight: 900;
     margin-bottom: 16px;
   }
 
-  ${Descricao} {
+  ${Description} {
     color: #fff;
     line-height: 22px;
     padding-right: 32px;
   }
 
-  ${Botao} {
+  ${Button} {
     width: 218px;
     height: 24px;
     margin-top: 16px;

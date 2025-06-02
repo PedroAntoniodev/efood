@@ -1,21 +1,21 @@
-export const formataPreco = (preco = 0) => {
+export const formatPrice = (price = 0) => {
   return new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
-  }).format(preco);
+  }).format(price);
 };
-export const LimitaDescricao = (descricao: string, limite: number) => {
-  if (descricao.length > limite) {
-    return descricao.slice(0, limite).trim() + "...";
+export const descriptionLimit = (description: string, limit: number) => {
+  if (description.length > limit) {
+    return description.slice(0, limit).trim() + "...";
   }
 
-  return descricao;
+  return description;
 };
 
-export const getDescricaoCurta = (descricao: string) => {
-  return LimitaDescricao(descricao, 100);
+export const getDescriptionSmall = (description: string) => {
+  return descriptionLimit(description, 100);
 };
 
-export const getDescricao = (descricao: string) => {
-  return LimitaDescricao(descricao, 250);
+export const getDescription = (description: string) => {
+  return descriptionLimit(description, 250);
 };

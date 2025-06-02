@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { colors } from "../../styles";
 
 export const Container = styled.footer`
   display: block;
@@ -10,7 +10,7 @@ export const Container = styled.footer`
     text-align: center;
     margin-top: 32px;
     padding-bottom: 32px;
-    color: ${cores.vermelho};
+    color: ${colors.red};
     font-size: 10px;
   }
 `;

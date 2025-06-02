@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import ImagemFundo from "../../assets/images/fundo.png";
+import { open } from "../../store/reducers/cart";
+import type { RootReducer } from "../../store";
+
+import backgroundImage from "../../assets/images/fundo.png";
 import logo from "../../assets/images/logo.png";
 
-import { Imagem, LogoEfood } from "../Header/styles";
-import { LinkCart, Styles } from "./styles";
-
-import { useDispatch, useSelector } from "react-redux";
-import type { RootReducer } from "../../store";
-import { open } from "../../store/reducers/cart";
+import { Image, LogoEfood } from "../Header/styles";
+import * as S from "./styles";
 
 const HeaderPerfil = () => {
   const dispatch = useDispatch();
@@ -19,19 +19,19 @@ const HeaderPerfil = () => {
   };
 
   return (
-    <Imagem style={{ backgroundImage: `url(${ImagemFundo})` }}>
-      <Styles>
+    <Image style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <S.Styles>
         <div className="container">
           <h2>Restaurantes</h2>
           <Link to="/">
             <LogoEfood src={logo} alt="logo" />
           </Link>
-          <LinkCart onClick={OpenCart}>
+          <S.LinkCart onClick={OpenCart}>
             {items.length} itens no carrinho
-          </LinkCart>
+          </S.LinkCart>
         </div>
-      </Styles>
-    </Imagem>
+      </S.Styles>
+    </Image>
   );
 };
 

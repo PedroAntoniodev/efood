@@ -1,18 +1,11 @@
+import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 import Tag from "../Tag";
-import {
-  Botao,
-  Card,
-  ConteudoCard,
-  Descricao,
-  Infos,
-  OverallRating,
-  Titulo,
-  TopoCard,
-} from "./styles";
-import { Link } from "react-router-dom";
-import { getDescricao } from "../../utils";
+
+import * as S from "./styles";
+
+import { getDescription } from "../../utils";
 
 type Props = {
   id: number;
@@ -31,27 +24,27 @@ const Restaurants = ({
   overallRating,
   id,
 }: Props) => (
-  <Card>
+  <S.Card>
     <img src={image} alt={title} />
-    <Infos>
+    <S.Infos>
       {infos.map((info) => (
         <Tag key={id}>{info}</Tag>
       ))}
-    </Infos>
-    <ConteudoCard>
-      <TopoCard>
-        <Titulo>{title}</Titulo>
-        <OverallRating>
+    </S.Infos>
+    <S.CardContent>
+      <S.CardTop>
+        <S.Title>{title}</S.Title>
+        <S.OverallRating>
           {overallRating}
           <FaStar color="#FFB930" size={20} style={{ marginLeft: "4px" }} />
-        </OverallRating>
-      </TopoCard>
-      <Descricao>{getDescricao(description)}</Descricao>
+        </S.OverallRating>
+      </S.CardTop>
+      <S.Description>{getDescription(description)}</S.Description>
       <Link to={`/perfil/${id}`}>
-        <Botao>Saiba mais</Botao>
+        <S.Button>Saiba mais</S.Button>
       </Link>
-    </ConteudoCard>
-  </Card>
+    </S.CardContent>
+  </S.Card>
 );
 
 export default Restaurants;

@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { colors } from "../../styles";
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   width: 100%;
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
 `;
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
-  color: ${cores.vermelho};
+  color: ${colors.red};
   text-align: center;
   margin-top: 80px;
   padding-bottom: 40px;

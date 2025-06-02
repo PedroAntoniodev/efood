@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 
+import { useGetMenuQuery } from "../../services/api";
+
 import Banner from "../../components/Banner";
 import FoodList from "../../components/FoodList";
 import HeaderPerfil from "../../components/HeaderPerfil";
-import { useGetMenuQuery } from "../../services/api";
 
 const Perfil = () => {
   const { id } = useParams();
@@ -19,8 +20,8 @@ const Perfil = () => {
       <HeaderPerfil />
       <Banner
         backgroundImage={menu.capa}
-        tipo={menu.tipo}
-        titulo={menu.titulo}
+        type={menu.tipo}
+        title={menu.titulo}
       />
       <div className="container">
         <FoodList comidas={menu.cardapio} />

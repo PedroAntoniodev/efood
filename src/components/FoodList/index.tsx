@@ -1,7 +1,7 @@
-import { List } from "./styles";
-import { Container } from "../RestaurantsList/styles";
 import Foods from "../Foods";
 
+import { List } from "./styles";
+import { Container } from "../RestaurantsList/styles";
 export type Food = {
   foto: string;
   preco: number;

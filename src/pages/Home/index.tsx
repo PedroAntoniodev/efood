@@ -1,7 +1,7 @@
-import RestaurantList from "../../components/RestaurantsList";
-
-import Header from "../../components/Header";
 import { useGetRestaurantsQuery } from "../../services/api";
+
+import RestaurantList from "../../components/RestaurantsList";
+import Header from "../../components/Header";
 
 export type Food = {
   id: number;
